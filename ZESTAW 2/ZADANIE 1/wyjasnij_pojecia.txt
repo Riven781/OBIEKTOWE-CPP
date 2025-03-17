@@ -1,0 +1,23 @@
+Polimorfizm dynamiczny, czyli możliwość decydowania o tym
+jaka funkcja zostanie wywołana pod daną nazwą nie w momencie kompilacji (czyli pisania kodu),
+ale w samym momecie wywołania.
+
+
+Polimorfizm statyczny (inaczej polimorfizm w czasie kompilacji) to rodzaj polimorfizmu,
+w którym wybór odpowiedniej funkcji lub metody następuje w czasie kompilacji, a nie w czasie działania programu.
+
+    Dziedzieczenie i funkcje wirtualne
+        umożliwia pracę ze zbiorami niejednorodnych obiektów i korzysta z polimorfizmu dynamicznego
+        wymaga wspólnej hierarchii dziedziczenia
+        wymusza korzystanie ze wskaźników lub referencji i funkcji wirtualnych
+        zazwyczaj generuje mniejszy kod.
+    Szablony
+        implementuje polimorfizm statyczny
+        bezpiecznie obsługuje jednorodne zbiory obiektów
+        nie trzeba korzystać ze wskaźników i referencji ani funkcji wirtualnych
+        nie musimy korzystać ze wspólnej hierarchii dziedziczenia.
+
+Klasa abstrakcyjna to klasa, która nie może być instancjonowana. Inne klasy mogą po niej dziedziczyć.
+Może zawierać zarówno zwykłe metody, jak i metody abstrakcyjne (czysto wirtualne), które muszą być zaimplementowane w klasach dziedziczących.
+
+Funkcja wirtualna to metoda w klasie bazowej, którą można przesłonić w klasach pochodnych.
