@@ -2,12 +2,12 @@
 #include <chrono>
 
 template<int N> 
-inline double pow(double x){
+constexpr inline double pow(double x){
     return x * pow<N-1>(x);
 }
 
 template<>
-inline double pow<0>(double x){
+constexpr inline double pow<0>(double x){
     return 1.0;
 }
 
@@ -20,7 +20,7 @@ double pow_int(double x,int n) {
 
 template<int N>
 void zmierz_czas(double x, int ile_powtorzen_wywolan){
-    std::cout << "Dla funkcji sablonowej:" << std::endl;
+    std::cout << "Dla funkcji szablonowej:" << std::endl;
     auto start = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < ile_powtorzen_wywolan; i++)
     {
