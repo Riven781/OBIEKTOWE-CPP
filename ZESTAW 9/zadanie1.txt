@@ -1,0 +1,26 @@
+1. Objaśnij działanie inteligentnych wskaźników: shared_ptr, unique_ptr
+
+Inteligentne wskaźniki w C++ (shared_ptr, unique_ptr) to klasy z biblioteki standardowej (<memory>),
+które zarządzają dynamicznie alokowaną pamięcią, automatyzując jej zwalnianie. 
+Zastępują surowe wskaźniki (T*) i pomagają unikać wycieków pamięci.
+
+(Inteligentny wskaźnik to szablon klasy, który deklaruje się na stosie i inicjalizuje za pomocą surowego wskaźnika wskazującego na obiekt w stercie. 
+Po inicjalizacji inteligentny wskaźnik przejmuje odpowiedzialność za ten surowy wskaźnik, czyli sam usuwa przydzieloną pamięć, gdy przestaje być potrzebny.)
+
+
+unique_ptr — unikalny właściciel zasobu
+
+    - Może istnieć tylko jeden właściciel danego obiektu.
+
+    - Gdy unique_ptr zostanie zniszczony (np. wychodzi z zakresu), automatycznie wywołuje delete na zarządzanym obiekcie.
+
+    - Nie można go kopiować, ale można przenosić (move semantics).
+
+
+shared_ptr — współdzielony właściciel zasobu
+
+    - Wiele wskaźników może współdzielić ten sam obiekt.
+
+    - Obiekt zostanie usunięty dopiero, gdy ostatni shared_ptr zostanie zniszczony lub zresetowany.
+
+    - Posiada wewnętrzny licznik referencji (reference count).
